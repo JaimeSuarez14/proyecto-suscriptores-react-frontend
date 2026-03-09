@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Subscriber } from "./assets/interfaces/Subscriber";
+import type { Subscriber } from "./interfaces/Subscriber";
 import axios from "axios";
 import { useFormStatus } from "react-dom";
 
@@ -59,7 +59,7 @@ function App() {
     <>
       <div className="flex h-screen justify-center items-center  bg-blue-950 text-white gap-3">
         <div className="flex justify-center items-center flex-col w-screen md:max-w-2xl gap-3">
-          <div className="border w-full shadow-md h-72 lg:h-72 overflow-auto relative">
+          <div className="border w-full shadow-md h-96 lg:h-96 overflow-auto relative">
             <h1 className="text-2xl font-bold text-blue-600 p-4 sticky  bg-black top-0 right-0 left-0">
               Lista de suscriptores
             </h1>
