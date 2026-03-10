@@ -6,18 +6,19 @@ import { useFormStatus } from "react-dom";
 function App() {
   const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
 
-  const fetchSubscriber = async () => {
+  
+
+  useEffect(() => {
+    const fetchSubscriber = async () => {
     try {
       const response = await axios.get("http://localhost:8000/api/suscribers");
       console.log(response);
-      const data = (await response.data) as Subscriber[];
+      const data = response.data as Subscriber[];
       setSubscribers(data);
     } catch (error) {
       console.log(error);
     }
   };
-
-  useEffect(() => {
     fetchSubscriber();
   }, []);
 
@@ -91,7 +92,7 @@ function App() {
                     type="text"
                     name="name"
                     id=""
-                    className="border border-white w-full"
+                    className="border border-white w-full p-2 rounded-lg"
                   />
                 </div>
 
@@ -101,7 +102,7 @@ function App() {
                     type="email"
                     name="email"
                     id=""
-                    className="border border-white w-full"
+                    className="border border-white w-full p-2 rounded-lg"
                   />
                 </div>
                 <SubmitButton />
